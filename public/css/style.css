@@ -45,19 +45,20 @@ body {
   margin-left: 10px;
 }
 
-#mainpage-form-container button{
+#catalogo{
     width: 150px;
 }
 
 #mainpage-form-container {
-    width: 460px;
+    width: 650px;
     margin: 100px auto;
 }
 
 #account-form-container {
-  width: 460px;
+  width: 650px;
   margin: 100px auto;
 }
+
 #country-list {
   width: 280px;
 }
