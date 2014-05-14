@@ -45,20 +45,35 @@ body {
   margin-left: 10px;
 }
 
-#catalogo{
-    width: 150px;
-}
-
-#mainpage-form-container {
-    width: 650px;
+#mainpage-form-container{
+    width: 460px;
     margin: 100px auto;
 }
 
-#account-form-container {
-  width: 650px;
-  margin: 100px auto;
+#mainpage-form-container button{
+    width: 100px;
 }
 
+#mainpage-form-container img{
+    width: 100px;
+}
+
+#catalogo_bt{
+    margin-bottom: 10px;
+    width: 160px;
+    height:160px;
+    background: url('/img/Catalogo_bn.png');
+    background-size: 80px 80px;
+}
+.catalogo_bt .hover{
+    width: 150px;
+    background-image : url('/img/Catalogo.png');
+}
+
+#account-form-container {
+  width: 460px;
+  margin: 100px auto;
+}
 #country-list {
   width: 280px;
 }
@@ -104,7 +119,7 @@ body {
   margin: -200px 0 0 -150px;
 }
 #btn-logout {
-  width: 150px;
+  width: 100px;
   top: 1px;
   right: 8px;
   position: absolute;
