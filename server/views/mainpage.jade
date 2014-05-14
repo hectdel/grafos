@@ -4,11 +4,15 @@
 // preset form values if we receive a userdata object //
 - user = typeof(udata) != 'undefined' ? udata : { }
 // store the userId on the client side in a hidden input field //
-input(type='hidden', value= user._id)#userId
+input(tmainpage-form-containerype='hidden', value= user._id)#userId
 #mainpage-form-container
-        #catalogo_bt
-        button.btn.btn-primary Clientes
-        button.btn.btn-primary Colegios
+    div(style='padding-bottom:50px')
+        a(href='#')
+            div(class='btn_catalogo')
+         a(href='#')
+             div(class='btn_catalogo')
+        a(href='#')
+            div(class='btn_catalogo')
     include account
 // display form errors in a custom modal window //
 include modals/form-errors
