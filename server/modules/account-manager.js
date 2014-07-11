@@ -4,14 +4,26 @@ var MongoDB 	= require('mongodb').Db;
 var Server 		= require('mongodb').Server;
 var moment 		= require('moment');
 
-var dbPort 		= 27017;
-var dbHost 		= 'localhost';
-var dbName 		= 'Shop';
+var dbPort 		= 10092;
+var dbHost 		= 'localennon.mongohq.com';
+var dbName 		= 'app27305241';
+var user        = 'admin';
+var password    = 'admin';
 
 /* establish the database connection */
 
 var db = new MongoDB(dbName, new Server(dbHost, dbPort, {auto_reconnect: true}), {w: 1});
-	db.open(function(e, d){
+
+    db.authenticate(user, password, function(err, res) {
+        if(!err) {
+            console.log("Authenticated");
+        } else {
+            console.log("Error in authentication.");
+            console.log(err);
+        }
+    });
+
+    db.open(function(e, d){
 	if (e) {
 		console.log(e);
 	}	else{
