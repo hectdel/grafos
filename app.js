@@ -14,9 +14,10 @@ app.configure(function(){
 	app.set('port', port);
 	app.set('views', __dirname + '/server/views');
 	app.set('view engine', 'jade');
+    app.enable('trust proxy');
 	app.locals.pretty = true;
 //	app.use(express.favicon());
-//	app.use(express.logger('dev'));
+ 	app.use(express.logger('dev'));
 	app.use(express.bodyParser());
 	app.use(express.cookieParser());
 	app.use(express.session({ secret: 'super-duper-secret-secret' }));
