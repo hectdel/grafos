@@ -7,12 +7,15 @@
 input(tmainpage-form-containerype='hidden', value= user._id)#userId
 #mainpage-form-container
     div(style='padding-bottom:50px')
-        a(href='#')
-            div(class='btn_catalogo')
-         a(href='#')
-             div(class='btn_catalogo')
-        a(href='#')
-            div(class='btn_catalogo')
-    include account
+        a
+            div.btn_catalogo
+        a
+            div.btn_catalogo
+        a
+            div.btn_catalogo
 // display form errors in a custom modal window //
 include modals/form-errors
+include modals/alert
+include modals/confirm
+block scripts
+script(src='/js/controllers/mainpageController.js')

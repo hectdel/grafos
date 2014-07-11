@@ -4,8 +4,7 @@ var EM = require('./modules/email-dispatcher');
 
 module.exports = function (app) {
 
-// main login page //
-
+    // main login page //
     app.get('/', function (req, res) {
         // check if the user's credentials are saved in a cookie //
         if (req.cookies.user == undefined || req.cookies.pass == undefined) {
@@ -39,8 +38,6 @@ module.exports = function (app) {
     });
 
     // main Page from shop
-
-
     app.get('/main', function (req, res) {
         if (req.session.user == null) {
             // if user is not logged-in redirect back to login page //
@@ -53,6 +50,39 @@ module.exports = function (app) {
             });
         }
     });
+
+
+    app.post('/main', function (req, res) {
+        if (req.param('user') != undefined) {
+            AM.updateAccount({
+                user: req.param('user'),
+                name: req.param('name'),
+                email: req.param('email'),
+                country: req.param('country'),
+                pass: req.param('pass')
+            }, function (e, o) {
+                if (e) {
+                    res.send('error-updating-account', 400);
+                } else {
+                    req.session.user = o;
+                    // update the user's login cookies if they exists //
+                    if (req.cookies.user != undefined && req.cookies.pass != undefined) {
+                        res.cookie('user', o.user, { maxAge: 900000 });
+                        res.cookie('pass', o.pass, { maxAge: 900000 });
+                    }
+                    res.send('ok', 200);
+                }
+            });
+        } else if (req.param('logout') == 'true') {
+            res.clearCookie('user');
+            res.clearCookie('pass');
+            req.session.destroy(function (e) {
+                res.send('ok', 200);
+            });
+        }
+    });
+
+
 
 
 // logged-in user homepage //
