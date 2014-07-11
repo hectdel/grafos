@@ -14,6 +14,7 @@ app.configure(function(){
 	app.set('port', port);
 	app.set('views', __dirname + '/server/views');
 	app.set('view engine', 'jade');
+
     app.enable('trust proxy');
 	app.locals.pretty = true;
 //	app.use(express.favicon());
