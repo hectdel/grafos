@@ -4,7 +4,7 @@ var MongoDB 	= require('mongodb').Db;
 var Server 		= require('mongodb').Server;
 var moment 		= require('moment');
 
-var dbPort 		= 10092;
+var dbPort 		=  10092;
 var dbHost 		= 'lennon.mongohq.com';
 var dbName 		= 'app27305241';
 var user        = 'admin';
@@ -16,7 +16,7 @@ var db = new MongoDB(dbName, new Server(dbHost, dbPort, {auto_reconnect: true}),
 
     db.open(function(e, d){
 
-        console.log("Proced to authenticate");
+        console.log("Proced to authenticate first step");
 
         db.authenticate(user, password, function(err, res) {
             if(!err) {
