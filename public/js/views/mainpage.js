@@ -3,5 +3,4 @@
  */
 $(document).ready(function () {
     mpc=  new MainPageController();
-    mcs = new MainMenuService();
 })
