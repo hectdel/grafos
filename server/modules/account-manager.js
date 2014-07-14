@@ -7,8 +7,8 @@ var moment 		= require('moment');
 var dbPort 		=  10092;
 var dbHost 		= 'lennon.mongohq.com';
 var dbName 		= 'app27305241';
-var user        = 'admin';
-var password    = 'admin';
+var user        = 'test';
+var password    = 'test';
 
 /* establish the database connection */
 
