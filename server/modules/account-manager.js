@@ -4,11 +4,17 @@ var MongoDB 	= require('mongodb').Db;
 var Server 		= require('mongodb').Server;
 var moment 		= require('moment');
 
-var dbPort 		=  10092;
-var dbHost 		= 'lennon.mongohq.com';
-var dbName 		= 'app27305241';
+var dbPort 		=  27017;
+var dbHost 		= 'localhost';
+var dbName 		= 'Shop';
 var user        = 'test';
 var password    = 'test';
+
+//var dbPort 		=  10092;
+//var dbHost 		= 'lennon.mongohq.com';
+//var dbName 		= 'app27305241';
+//var user        = 'test';
+//var password    = 'test';
 
 /* establish the database connection */
 
