@@ -2,10 +2,8 @@
 $(document).ready(function(){
 	
 	var lv = new LoginValidator();
-	var lc = new LoginController();
 
-// main login form //
-
+    // main login form //
 	$('#login-form').ajaxForm({
 		beforeSubmit : function(formData, jqForm, options){
 			if (lv.validateForm() == false){
@@ -25,8 +23,7 @@ $(document).ready(function(){
 	}); 
 	$('#user-tf').focus();
 	
-// login retrieval form via email //
-	
+    // login retrieval form via email //
 	var ev = new EmailValidator();
 	
 	$('#get-credentials-form').ajaxForm({
