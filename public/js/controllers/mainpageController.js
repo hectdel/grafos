@@ -5,7 +5,7 @@ function MainPageController() {
 
     // bind event listeners to button clicks //
     var that = this;
-    $('.btn_catalogo').click(function () {this.showMessage("Success", "Enter");
+    $('.btn_catalogo').click(function () {that.showMessage("Success", "Enter");
     });
 
     this.showMessage = function(t, m)
